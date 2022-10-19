@@ -85,7 +85,7 @@ def findOperator(s):
 
 operators = {
     "+": add,
-    "-": divide,
+    "-": subtract,
     "*": multiply,
     "/": divide,
 }
@@ -121,6 +121,7 @@ def filterNumbers_5():
         else:
             leftSideValue = int(leftSide)
         leftSideValueComputed = True
+
     if "x" not in rightSide and "y" not in rightSide:
         if op_right != "0":
             rightSide = rightSide.split(op_right)
@@ -128,9 +129,6 @@ def filterNumbers_5():
         else:
             rightSideValue = int(rightSide)
         rightSideValueComputed = True
-
-    # print(leftSideValue)
-    # print(rightSideValue)
 
     if rightSideValue == leftSideValue and leftSideValueComputed and rightSideValueComputed:
         list1 = []

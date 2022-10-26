@@ -1,6 +1,6 @@
 from _1 import drawRectangles
 from _2 import drawHeart
-from _3_easy import drawHomes
+from _3 import drawHomes
 
 exercises = {
     "1": drawRectangles,

@@ -5,16 +5,14 @@ def addRationalToList(lst, rational):
     lst.append(rational)
 
 
+def addRationalToPosition(lst, rational, position):
+    lst.insert(position, rational)
+
+
 def removeRationalInList(lst, rational):
-    if rational in lst:
-        lst.remove(rational)
-    else:
-        print("This number is not in the list")
-
-
-def removeAllOccurrencesInList(lst, rational):
-    while rational in lst:
-        removeRationalInList(lst, rational)
+    for e in lst:
+        if e.numerator == rational.numerator and e.denominator == rational.denominator:
+            lst.remove(e)
 
 
 def sumOfList(lst):
@@ -22,6 +20,8 @@ def sumOfList(lst):
 
     for e in lst:
         s = s.__add__(e)
+
+    s.__reduce__()
 
     print(s)
 

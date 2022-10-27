@@ -18,10 +18,10 @@ def isNeighbour(e1, e2):
     # print(i_e1, j_e1)
     # print(i_e2, j_e2)
 
-    if i_e1 == i_e2 and (j_e1 == j_e2 + 1 or j_e1 == j_e2 - 1 or j_e1 - 1 == j_e2 or j_e1 + 1 == j_e2):
+    if i_e1 == i_e2 and (j_e1 == j_e2 + 1 or j_e1 == j_e2 - 1):
         return True
 
-    if j_e1 == j_e2 and (i_e1 == i_e2 + 1 or i_e1 == i_e2 - 1 or i_e1 - 1 == i_e2 or i_e1 + 1 == i_e2):
+    if j_e1 == j_e2 and (i_e1 == i_e2 + 1 or i_e1 == i_e2 - 1):
         return True
 
     return False

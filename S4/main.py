@@ -1,7 +1,7 @@
 import lst_functions
 from Rational import Rational
 
-lst = [Rational(1, 2)]
+lst = [Rational(1, 2), Rational(1, 3), Rational(1, 4), Rational(1, 5)]
 
 
 def printOptions():

@@ -23,6 +23,8 @@ def sumOfList(lst):
     for e in lst:
         s = s.__add__(e)
 
+    print(s)
+
 
 def printLst(lst):
     for e in lst:

@@ -27,6 +27,7 @@ def sumOfList(lst):
 
 
 def printLst(lst):
-    for e in lst:
-        print(e, end=" , ")
+    for i in range(len(lst) - 1):
+        print(lst[i], end=" , ")
+    print(lst[-1], end="")
     print()

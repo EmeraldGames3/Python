@@ -9,11 +9,15 @@ exercises = {
 }
 
 
-def run():
+def printOptions():
     print("Zeichnungen:")
     print("1 Rechtecke")
     print("2 Herz")
     print("3 Haeuser")
+
+
+def run():
+    printOptions()
     option = input("Zeichnung: ")
 
     if option in exercises:

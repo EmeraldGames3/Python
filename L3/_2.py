@@ -2,9 +2,9 @@ import turtle
 
 
 def curve():
-    for i in range(200):
-        turtle.right(1)
-        turtle.forward(1)
+    for i in range(50):
+        turtle.right(4)
+        turtle.forward(4)
 
 
 def drawHeart():

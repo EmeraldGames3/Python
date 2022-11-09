@@ -33,7 +33,7 @@ outcomes = {
 def gameLogic(playerOption, computerOption):
     """
     This functions contains all the logic of the rock paper scissors game
-    :return: A number that is in the outcomes dictionaru
+    :return: A number that is in the outcomes dictionary
     """
     if computerOption == playerOption:
         return 3

@@ -13,7 +13,7 @@ ex = {
 
 
 def printOptions():
-    print("1.")
+    print("1. Draw letters")
     print("2. Change words")
     print("3. Rock, paper, scissors")
     print("If you press an invalid key the program ends")

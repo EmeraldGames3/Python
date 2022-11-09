@@ -1,5 +1,8 @@
 import turtle
+
 from ex1.alphabet import *
+from ex1.punctiation import *
+from ex1.turtle_move import *
 
 tur = turtle.Turtle()
 
@@ -30,12 +33,49 @@ ch = {
     "x": x,
     "y": y,
     "z": z,
+    ".": point,
+    "?": point,
+    "!": point
 }
+
+moveTrt = {
+    "W": moveForward,
+    "S": moveBackwards,
+    "A": rotateLeft,
+    "D": rotateRight,
+    "G": moveDown,
+    "F": moveUp
+}
+
+
+def printOptions():
+    print("Enter 1 to write a letter")
+    print("Enter 2 to add a character")
+
+
+def printTurtleCommands():
+    moveTrt.values()
 
 
 def writeToTurtle():
     while True:
-        option = input("Write a letter ").strip()
-        if option in ch:
-            ch[option](tur)
+        printOptions()
+        option = input("Enter your option ").strip()
 
+        if option == "1":
+            optionChr = input("Write a letter ").strip()
+            if optionChr in ch:
+                ch[optionChr](tur)
+            else:
+                continue
+        elif option == "2":
+            printTurtleCommands()
+            while True:
+                yourOption = input("Your command ").strip()
+                if option in moveTrt:
+                    moveTrt[yourOption]()
+                else:
+                    break
+        else:
+            tur.clear()
+            break

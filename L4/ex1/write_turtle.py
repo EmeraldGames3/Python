@@ -47,6 +47,15 @@ moveTrt = {
     "F": moveUp
 }
 
+moveTrtName = {
+    "W": "forward",
+    "S": "backwards",
+    "A": "rotateLeft",
+    "D": "rotateRight",
+    "G": "moveDown",
+    "F": "moveUp"
+}
+
 
 def printOptions():
     print("Enter 1 to write a letter")
@@ -55,6 +64,16 @@ def printOptions():
 
 def printTurtleCommands():
     moveTrt.values()
+
+
+def printHumanOptions():
+    print("Your options are: \n"
+          "Press W to move forward 10 pixels \n"
+          "Press S to move backwards 10 pixels \n"
+          "Press A to rotate left \n"
+          "Press D to rotate right \n"
+          "Press G to put pen down \n"
+          "Press F to put pen up")
 
 
 def writeToTurtle():
@@ -66,16 +85,40 @@ def writeToTurtle():
             optionChr = input("Write a letter ").strip()
             if optionChr in ch:
                 ch[optionChr](tur)
-            else:
-                continue
         elif option == "2":
-            printTurtleCommands()
+            fileWords = []
+
+            with(open("ex1.txt") as fl):
+                for line in fl:
+                    fileWords.append(line.strip())
+
+            fl = open("ex1.txt", "w")
+
+            characterName = input("Name your character")
+
+            if characterName in fileWords:
+                print("Invalid name")
+                continue
+
+            fileWords.append("\n")
+            fileWords.append(characterName)
+
+            printHumanOptions()
+
             while True:
-                yourOption = input("Your command ").strip()
-                if option in moveTrt:
-                    moveTrt[yourOption]()
+                yOption = input("Your character ").strip()
+                if yOption in moveTrt:
+                    moveTrt[yOption](tur)
+                    fileWords.append(str(moveTrtName[yOption]))
                 else:
                     break
+
+            if fileWords[-1] != characterName:
+                for word in fileWords:
+                    fl.write(word + "\n")
+
+            fl.close()
+
         else:
             tur.clear()
             break

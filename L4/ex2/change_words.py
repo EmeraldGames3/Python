@@ -4,7 +4,6 @@ def extractFile(fileName):
     :param fileName: The name of the file to be accessed
     :return: A list that contains the contents of the file
     """
-
     l = []
 
     with(open(fileName) as file):

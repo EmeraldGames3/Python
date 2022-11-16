@@ -14,14 +14,38 @@ def fillFileWordsList():
     return fileWords
 
 
-def characterCreation(tur, characterName, fileWords):
+def saveAdditionalChr(fileWords):
     """
-    Here a character is created and then stored in the file
+    Save the contents of additionalChr to the file
+    """
+    """
+    TODO: The new charakter is not saved to the file
+    """
+    fl = open("ex1.txt", "w")
+
+    for word in fileWords:
+        if "+" not in word:
+            fl.write(word + "+" + "\n")
+        else:
+            fl.write(word + "\n")
+
+    fl.close()
+
+
+def characterCreation(tur, fileWords):
+    """
+    Here a character is created
     :param tur: The turtle
     :param characterName: The name of the character to be added
     :param fileWords: A list of all characters in the file
     """
-    fl = open("ex1.txt", "w")
+    characterName = ":" + input("Name your character ") + ":"
+
+    if characterName in fileWords:
+        print("Invalid name")
+        return
+
+    fileWords.append(characterName)
 
     while True:
         yorOption = input("Your character ").strip()
@@ -30,15 +54,6 @@ def characterCreation(tur, characterName, fileWords):
             fileWords.append(str(moveTrtName[yorOption]))
         else:
             break
-
-    if fileWords[-1] != characterName:
-        for word in fileWords:
-            if "+" not in word:
-                fl.write(word + "+" + "\n")
-            else:
-                fl.write(word + "\n")
-
-    fl.close()
 
 
 def writeCharacter(tur, optionChr):

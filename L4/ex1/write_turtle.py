@@ -1,13 +1,13 @@
 import turtle
 
-from ex1.data import additionalChr
-from ex1.logik import fillFileWordsList, characterCreation, writeCharacter, interpretListFromFile, writeCharacterList
+from ex1.logik import fillFileWordsList, characterCreation, interpretListFromFile, writeCharacterList, saveAdditionalChr
 from ex1.ui import printOptions, printHumanOptions
 
 tur = turtle.Turtle()
 
 
 def writeToTurtle():
+    fileWords = fillFileWordsList()
     while True:
         interpretListFromFile()
         # print(additionalChr)
@@ -22,18 +22,11 @@ def writeToTurtle():
             writeCharacterList(tur, optionChr)
 
         elif option == "2":
-            characterName = ":" + input("Name your character ") + ":"
-
-            if characterName in fileWords:
-                print("Invalid name")
-                return
-
-            fileWords.append(characterName)
-
             printHumanOptions()
 
-            characterCreation(tur, characterName, fileWords)
+            characterCreation(tur, fileWords)
 
         else:
+            saveAdditionalChr(fileWords)
             tur.clear()
             break

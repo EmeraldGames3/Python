@@ -1,4 +1,4 @@
-from ex1.data import moveTrtInterpretation, ch, moveTrt, moveTrtName, additionalChr
+from ex1.data import moveTrtInterpretation, characterDict, moveTrt, moveTrtName, additionalChr
 
 
 def fillFileWordsList():
@@ -41,17 +41,49 @@ def characterCreation(tur, characterName, fileWords):
     fl.close()
 
 
-def writeCharacter(tur):
+def writeCharacter(tur, optionChr):
     """
     We use this function to write a letter
-    :param: The turtle
+    :param tur: The turtle
+    :param optionChr: The charakter that needs to be writen
     """
-    optionChr = input("Write a letter ").strip()
-    if optionChr in ch:
-        ch[optionChr](tur)
+    if optionChr in characterDict:
+        tur.pd()
+        characterDict[optionChr](tur)
+        tur.pu()
     if optionChr in additionalChr:
+        tur.pd()
         interpretListOfCharacters(additionalChr[optionChr], tur)
         tur.fd(30)
+        tur.pu()
+
+
+def writeCharacterList(tur, st):
+    """
+    :param tur: The turtle
+    :param st: The word given by the human
+    Splits the given word into characters to be written by the writeCharacter function
+    """
+    newS = []
+    s = ""
+
+    for c in st:
+        # print(c)
+        if s in additionalChr:
+            newS.append(s)
+            s = ""
+        if c in characterDict:
+            newS.append(c)
+        else:
+            s += c
+
+    if s in additionalChr:
+        newS.append(s)
+
+    # print(newS)
+
+    for e in newS:
+        writeCharacter(tur, e)
 
 
 def interpretCharacter(s, tur):

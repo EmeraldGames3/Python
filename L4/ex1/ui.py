@@ -2,7 +2,7 @@ from ex1.data import moveTrt
 
 
 def printOptions():
-    print("Enter 1 to write a letter")
+    print("Enter 1 to write a word")
     print("Enter 2 to add a character")
 
 

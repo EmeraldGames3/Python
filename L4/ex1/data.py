@@ -1,11 +1,11 @@
 from ex1.alphabet import *
-from ex1.punctiation import point
+from ex1.punctiation import point, exclamationMark, questionMark
 from ex1.turtle_move import moveForward, moveBackwards, rotateLeft, rotateRight, moveDown, moveUp
 
 """
 This is a dictionary that contains all functions for characters 
 """
-ch = {
+characterDict = {
     "a": a,
     "b": b,
     "c": c,
@@ -33,8 +33,8 @@ ch = {
     "y": y,
     "z": z,
     ".": point,
-    "?": point,
-    "!": point,
+    "?": questionMark,
+    "!": exclamationMark,
 }
 
 """

@@ -14,7 +14,7 @@ def fillFileWordsList():
     return fileWords
 
 
-def saveAdditionalChr(fileWords):
+def saveAdditionalChr():
     """
     Save the contents of additionalChr to the file
     """
@@ -23,11 +23,18 @@ def saveAdditionalChr(fileWords):
     """
     fl = open("ex1.txt", "w")
 
-    for word in fileWords:
-        if "+" not in word:
-            fl.write(word + "+" + "\n")
-        else:
-            fl.write(word + "\n")
+    for key in additionalChr:
+        fl.write(key + ":" + "+" + "\n")
+        s = additionalChr[key]
+
+        s = s.strip()
+
+        s = s.split("+")
+        # print(s)
+
+        for word in s:
+            if word != "":
+                fl.write(word + "+" + "\n")
 
     fl.close()
 
@@ -36,7 +43,6 @@ def characterCreation(tur, fileWords):
     """
     Here a character is created
     :param tur: The turtle
-    :param characterName: The name of the character to be added
     :param fileWords: A list of all characters in the file
     """
     characterName = ":" + input("Name your character ") + ":"

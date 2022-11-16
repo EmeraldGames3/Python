@@ -8,8 +8,8 @@ tur = turtle.Turtle()
 
 def writeToTurtle():
     fileWords = fillFileWordsList()
+    interpretListFromFile()
     while True:
-        interpretListFromFile()
         # print(additionalChr)
 
         printOptions()
@@ -27,6 +27,6 @@ def writeToTurtle():
             characterCreation(tur, fileWords)
 
         else:
-            saveAdditionalChr(fileWords)
+            saveAdditionalChr()
             tur.clear()
             break

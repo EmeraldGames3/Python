@@ -3,7 +3,7 @@ def moveForward(tut):
 
 
 def moveBackwards(tut):
-    tut.bd(10)
+    tut.bk(10)
 
 
 def rotateRight(tut):

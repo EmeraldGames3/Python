@@ -56,7 +56,6 @@ def call_changeWords():
     """
     fl = "ex2.txt"
 
-    fileText = []
     try:
         fileText = extractFile(fl)
     except FileNotFoundError as ex:

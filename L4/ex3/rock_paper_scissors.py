@@ -19,6 +19,35 @@ opt = (
     "Paper",
     "Scissors"
 )
+"""
+Animations
+"""
+optAnimations = {
+    "Rock": """
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+""",
+    "Paper": """
+     _______
+---'    ____)____
+           ______)
+          _______)
+         _______)
+---.__________)
+""",
+    "Scissors": """
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+"""
+}
 
 """
 This dictionary contains the possible outcomes of a rock paper scissors game
@@ -86,8 +115,11 @@ def playGame():
             print("Invalid option")
             continue
 
+        print(optAnimations[opt[playerOption - 1]])
+
         computerOption = random.choice(opt)
         print(f"The computer has played {computerOption}")
+        print(optAnimations[computerOption])
 
         computerOption = opt.index(computerOption) + 1
 

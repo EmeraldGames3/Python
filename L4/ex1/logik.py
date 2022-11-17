@@ -1,4 +1,5 @@
 from ex1.data import moveTrtInterpretation, characterDict, moveTrt, moveTrtName, additionalChr
+from ex1.ui import printHumanOptions
 
 
 def fillFileWordsList():
@@ -24,7 +25,7 @@ def saveAdditionalChr():
     fl = open("ex1.txt", "w")
 
     for key in additionalChr:
-        fl.write(key + ":" + "+" + "\n")
+        fl.write(":" + key + ":" + "+" + "\n")
         s = additionalChr[key]
 
         s = s.strip()
@@ -51,6 +52,10 @@ def characterCreation(tur, fileWords):
         print("Invalid name")
         return
 
+    auxName = characterName.split(":")[1]
+    additionalChr[auxName] = ""
+    printHumanOptions()
+
     fileWords.append(characterName)
 
     while True:
@@ -58,6 +63,7 @@ def characterCreation(tur, fileWords):
         if yorOption in moveTrt:
             moveTrt[yorOption](tur)
             fileWords.append(str(moveTrtName[yorOption]))
+            additionalChr[auxName] += str(moveTrtName[yorOption] + "+")
         else:
             break
 

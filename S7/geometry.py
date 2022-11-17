@@ -13,6 +13,7 @@ class circle:
         self.center = center
 
     def makeItBig(self, num):
+        # Small
         self.radius += num
 
 
@@ -27,6 +28,7 @@ class triangle:
         self.bc = sqrt((c.x - b.x) ** 2 + (c.y - b.y) ** 2)
 
     def makeItBig(self, num):
+        # Small
         self.a += num
         self.b += num
         self.c += num

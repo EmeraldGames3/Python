@@ -81,3 +81,16 @@ rotateLeft+
 rotateLeft+
 forward+
 forward+
+:/:+
+forward+
+forward+
+forward+
+rotateLeft+
+rotateLeft+
+forward+
+forward+
+rotateLeft+
+rotateLeft+
+forward+
+forward+
+forward+

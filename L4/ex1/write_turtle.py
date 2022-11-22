@@ -21,7 +21,11 @@ def writeToTurtle():
             writeCharacterList(tur, optionChr)
 
         elif option == "2":
+            tur.clear()
             characterCreation(tur, fileWords)
+            saveAdditionalChr()
+            tur.clear()
+            break
 
         else:
             saveAdditionalChr()

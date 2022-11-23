@@ -12,28 +12,31 @@ def printChoices():
 Animations
 """
 optAnimations = {
-    "Rock": """
-    _______
----'   ____)
-      (_____)
-      (_____)
-      (____)
----.__(___)
-""",
-    "Paper": """
-     _______
----'    ____)____
-           ______)
-          _______)
-         _______)
----.__________)
-""",
-    "Scissors": """
-    _______
----'   ____)____
-          ______)
-       __________)
-      (____)
----.__(___)
-"""
+
 }
+
+
+def addAnimations():
+    aux = []
+    with(open("ex3.txt") as f):
+        for line in f:
+            aux.append(line.strip("\n"))
+
+    optAnimations["Rock"] = ""
+    optAnimations["Paper"] = ""
+    optAnimations["Scissors"] = ""
+
+    # print(aux)
+
+    # print(optAnimations)
+
+    for i in range(aux.index("Rock"), aux.index("Paper")):
+        optAnimations["Rock"] += (aux[i] + "\n")
+
+    for i in range(aux.index("Paper"), aux.index("Scissors")):
+        optAnimations["Rock"] += (aux[i] + "\n")
+
+    for i in range(len(aux)):
+        optAnimations["Rock"] += (aux[i] + "\n")
+
+    # print(optAnimations)

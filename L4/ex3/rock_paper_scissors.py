@@ -1,6 +1,6 @@
 import random
 
-from ex3.IO import printChoices, optAnimations
+from ex3.IO import printChoices, optAnimations, addAnimations
 from ex3.logik import gameLogic, outcomes, opt
 
 
@@ -10,6 +10,9 @@ def playGame():
     The overall game finishes once three games of rock paper scissors have been played
     A draw does not count towards the number of played games
     """
+
+    addAnimations()
+
     gameNumber = 0
     playerScore = 0
     computerScore = 0

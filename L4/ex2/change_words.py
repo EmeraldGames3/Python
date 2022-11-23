@@ -36,6 +36,21 @@ def changeWords(word, filename, replaceWord, lst):
     changeWordsInFile(filename, newLst)
 
 
+def changeWords2(wordToReplace, filename, replaceWord, lst):
+    wordAp = 0
+
+    for i in range(len(lst)):
+        # print(line)
+        while lst[i].find(wordToReplace) != -1:
+            lst[i] = lst[i].replace(wordToReplace, replaceWord)
+            wordAp += 1
+
+    print(f"The word appears {wordAp} times")
+    # print(lst)
+
+    changeWordsInFile(filename, lst)
+
+
 def changeWordsInFile(fileName, wordLst):
     """
     :param fileName: The name of the file
@@ -46,7 +61,7 @@ def changeWordsInFile(fileName, wordLst):
 
     for line in wordLst:
         for wd in line:
-            f.write(wd + " ")
+            f.write(wd)
         f.write("\n")
 
 
@@ -54,7 +69,7 @@ def call_changeWords():
     """
     This function is used to tie everything together
     """
-    fl = "ex2.txt"
+    fl = input("FileName ").strip()
 
     try:
         fileText = extractFile(fl)
@@ -65,4 +80,4 @@ def call_changeWords():
     word = input("Enter word to be replaced ").strip()
     replacementWord = input("Enter the replacement word ").strip()
 
-    changeWords(word, fl, replacementWord, fileText)
+    changeWords2(word, fl, replacementWord, fileText)

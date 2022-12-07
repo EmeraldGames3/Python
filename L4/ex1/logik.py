@@ -19,9 +19,6 @@ def saveAdditionalChr():
     """
     Save the contents of additionalChr to the file
     """
-    """
-    TODO: The new charakter is not saved to the file
-    """
     fl = open("ex1.txt", "w")
 
     for key in additionalChr:

@@ -1,6 +1,6 @@
-from ex3.rock_paper_scissors import playGame
-from ex2.change_words import call_changeWords
 from ex1.write_turtle import writeToTurtle
+from ex2.change_words import call_changeWords
+from ex3.rock_paper_scissors import playGame
 
 """
 This dictionary is used to create a menu for the overall homework

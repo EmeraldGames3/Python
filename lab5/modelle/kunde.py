@@ -1,7 +1,7 @@
-from modelle.identifizierbar import identifizierbar
+from modelle.identifizierbar import Identifizierbar
 
 
-class kunde(identifizierbar):
+class Kunde(Identifizierbar):
     def __init__(self, name: str, adresse: str):
         # Type Safety
         if type(name) != str or type(adresse) != str:

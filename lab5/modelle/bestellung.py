@@ -1,7 +1,7 @@
-from modelle.identifizierbar import identifizierbar
+from modelle.identifizierbar import Identifizierbar
 
 
-class bestellung(identifizierbar):
+class Bestellung(Identifizierbar):
     def __init__(self, kundenID: int, bestellungListe: list, gesamtkosten: float):
         # Type Safety
         if type(kundenID) != int or type(bestellungListe) != list or type(gesamtkosten) != float:

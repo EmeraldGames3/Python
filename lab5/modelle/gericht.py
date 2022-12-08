@@ -1,7 +1,7 @@
-from modelle.identifizierbar import identifizierbar
+from modelle.identifizierbar import Identifizierbar
 
 
-class gericht(identifizierbar):
+class Gericht(Identifizierbar):
     def __init__(self, portionsGroesse: int, preis: float):
         # Type Safety
         if type(portionsGroesse) != int or type(preis) != float:

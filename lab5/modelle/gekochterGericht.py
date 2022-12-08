@@ -1,7 +1,7 @@
-from modelle.gericht import gericht
+from modelle.gericht import Gericht
 
 
-class gekochterGericht(gericht):
+class gekochterGericht(Gericht):
     def __init__(self, portionsGroesse: int, preis: float, zubereitungsZeit: float):
         # Type Safety
         if type(zubereitungsZeit) != float:

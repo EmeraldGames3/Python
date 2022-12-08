@@ -1,9 +1,9 @@
-class identifizierbar:
+class Identifizierbar:
     __id = 1
 
     def __init__(self):
-        self.__id = identifizierbar.__id
-        identifizierbar.__id += 1
+        self.__id = Identifizierbar.__id
+        Identifizierbar.__id += 1
 
     @property
     def id(self):

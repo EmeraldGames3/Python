@@ -1,4 +1,4 @@
-from modelle.bestellung import bestellung
+from modelle.bestellung import Bestellung
 from modelle.gekochterGericht import gekochterGericht
 
 
@@ -8,19 +8,19 @@ def runTypeSafeTyTests():
 
 
 def testBestellung():
-    b = bestellung(12, [1, 2, 3], 12.5)
+    b = Bestellung(12, [1, 2, 3], 12.5)
     try:
-        b = bestellung(12, [12], '1')
+        b = Bestellung(12, [12], '1')
     except AttributeError:
         del b
         return
     try:
-        b = bestellung(12, 12, 1.6)
+        b = Bestellung(12, 12, 1.6)
     except AttributeError:
         del b
         return
     try:
-        b = bestellung(12.9, [12], 1.8)
+        b = Bestellung(12.9, [12], 1.8)
     except AttributeError:
         del b
         return

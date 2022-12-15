@@ -1,11 +1,3 @@
 class Identifizierbar:
-    def __init__(self, id_):
-        self.__id = id_
-
-    @property
-    def id(self):
-        return self.__id
-
-    @id.setter
-    def id(self, x):
-        self.__id = x
+    def __init__(self, id_=-1):
+        self.id = id_ if id_ != -1 else hash(self)

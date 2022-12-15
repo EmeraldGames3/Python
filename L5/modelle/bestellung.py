@@ -4,13 +4,10 @@ from modelle.identifizierbar import Identifizierbar
 
 
 class Bestellung(Identifizierbar):
-    def __init__(self, Kunden_Id: str):
-        super().__init__(hash(self))
+    def __init__(self, Kunden_Id: str, id_=-1):
+        super().__init__(id_)
         self.Kunden_Id = Kunden_Id
         self.lst = []
 
     def kostenBerechnung(self):
         return reduce(lambda x, y: x + y, self.lst)
-
-    def __str__(self):
-        return f"Kunden Id: {self.Kunden_Id}"

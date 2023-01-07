@@ -1,7 +1,7 @@
-from lab5.models.CookedDish import CookedDish
-from lab5.models.Drink import Drink
-from lab5.repository.Repository import Repository
-from lab5.ui.UIController import menu, invalid, header, footer, warning, tooltip
+from models.CookedDish import CookedDish
+from models.Drink import Drink
+from repository.Repository import Repository
+from ui.UIController import menu, invalid, header, footer, warning, tooltip
 
 
 class MenuController:

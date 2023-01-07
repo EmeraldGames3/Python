@@ -1,11 +1,11 @@
-from lab5.controller.CustomerController import CustomerController
-from lab5.controller.MenuController import MenuController
-from lab5.controller.OrderController import OrderController
-from lab5.repository.CookedDishRepository import CookedDishRepository
-from lab5.repository.CustomerRepository import CustomerRepository
-from lab5.repository.DrinkRepository import DrinkRepository
-from lab5.repository.OrderRepository import OrderRepository
-from lab5.ui.UIController import menu, invalid
+from controller.CustomerController import CustomerController
+from controller.MenuController import MenuController
+from controller.OrderController import OrderController
+from repository.CookedDishRepository import CookedDishRepository
+from repository.CustomerRepository import CustomerRepository
+from repository.DrinkRepository import DrinkRepository
+from repository.OrderRepository import OrderRepository
+from ui.UIController import menu, invalid
 
 
 class Controller:
@@ -31,19 +31,18 @@ class Controller:
 
         opt = int(opt)
 
-        match opt:
-            case 1:
-                self.order_controller.menu()
-                self.main_menu()
-            case 2:
-                self.menu_controller.menu()
-                self.main_menu()
-            case 3:
-                self.customer_controller.menu()
-                self.main_menu()
-            case 4:
-                # Exit program
-                pass
-            case _:
-                invalid()
-                self.main_menu()
+        if opt == 1:
+            self.order_controller.menu()
+            self.main_menu()
+        elif opt == 2:
+            self.menu_controller.menu()
+            self.main_menu()
+        elif opt == 3:
+            self.customer_controller.menu()
+            self.main_menu()
+        elif opt == 4:
+            # Exit program
+            pass
+        else:
+            invalid()
+            self.main_menu()

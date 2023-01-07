@@ -1,4 +1,4 @@
-from lab5.controller.Controller import Controller
+from controller.Controller import Controller
 
 
 def main():

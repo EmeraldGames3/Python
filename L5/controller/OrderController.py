@@ -1,13 +1,6 @@
-from lab5.models.CookedDish import CookedDish
-from lab5.models.Customer import Customer
-from lab5.models.Drink import Drink
-from lab5.models.Order import Order
-from lab5.repository.CookedDishRepository import CookedDishRepository
-from lab5.repository.CustomerRepository import CustomerRepository
-from lab5.repository.DrinkRepository import DrinkRepository
-from lab5.repository.OrderRepository import OrderRepository
-from lab5.repository.Repository import Repository
-from lab5.ui.UIController import menu, invalid, header, footer, warning, tooltip
+from models import Customer, Drink, CookedDish
+from repository import CustomerRepository, CookedDishRepository, OrderRepository, DrinkRepository, Repository
+from ui.UIController import menu, invalid, header, footer, warning, tooltip
 
 
 class OrderController:

@@ -1,7 +1,6 @@
-from lab5.models.Customer import Customer
-from lab5.repository.CustomerRepository import CustomerRepository
-from lab5.repository.Repository import Repository
-from lab5.ui.UIController import menu, invalid, header, footer, warning, tooltip
+from models.Customer import Customer
+from repository import CustomerRepository, Repository
+from ui.UIController import menu, invalid, header, footer, warning, tooltip
 
 
 class CustomerController:

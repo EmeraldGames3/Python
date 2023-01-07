@@ -1,4 +1,4 @@
-from modelle.Dish import Dish
+from models.Dish import Dish
 
 
 class Drink(Dish):

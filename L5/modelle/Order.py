@@ -1,9 +1,8 @@
 from functools import reduce
+from modelle.ID import ID
 
-from modelle.identifizierbar import Identifizierbar
 
-
-class Bestellung(Identifizierbar):
+class Bestellung(ID):
     def __init__(self, Kunden_Id: str, id_=-1):
         super().__init__(id_)
         self.Kunden_Id = Kunden_Id

@@ -1,7 +1,7 @@
-from modelle.identifizierbar import Identifizierbar
+from modelle.ID import ID
 
 
-class Gericht(Identifizierbar):
+class Dish(ID):
     def __init__(self, portionsgrose: float, preis: float, id_):
         super().__init__(id_)
         self.__portionsgrose = portionsgrose

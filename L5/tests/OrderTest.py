@@ -23,7 +23,7 @@ print(order)
 
 def order_bill_test():
     bill = order.generate_bill(dishes, drinks)
-    print(f"Bill: \n{bill}")
+    order.show_bill(dishes, drinks)
     assert "Pizza" in bill and "Ciorba de burta" in bill and "156" in bill and "Vodka" in bill
 
 
@@ -31,8 +31,8 @@ def save_load_order_test():
     order_repo = OrderRepo("orders.txt")
     order_repo.save([order])
 
-    print(order_repo.load()[0])
     read_order = order_repo.load()[0]
+    print(read_order)
 
     assert read_order == order
 

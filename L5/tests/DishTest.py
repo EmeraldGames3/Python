@@ -9,7 +9,7 @@ Here we test the functionalities of the DishRepo class
 def add_dish_test():
     repo = CookedDishRepo("dishes.txt")
     dish = CookedDish(0, "Telemea", 450, 12, 15)
-    print(dish)
+    # print(dish)
     repo.save([dish])
 
     read_dish = repo.load()[0]

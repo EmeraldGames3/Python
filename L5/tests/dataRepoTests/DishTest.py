@@ -4,7 +4,8 @@ from repository.CookedDishRepo import CookedDishRepo
 
 def add_dish_test():
     repo = CookedDishRepo("dishes.txt")
-    dish = CookedDish(0, "Pizza", 450, 12, 15)
+    dish = CookedDish(0, "Telemea", 450, 12, 15)
+    print(dish)
     repo.save([dish])
 
     read_dish = repo.load()[0]

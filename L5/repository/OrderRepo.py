@@ -2,7 +2,6 @@ from functools import reduce
 
 from models.Order import Order
 from repository.DataRepo import DataRepo
-from utils.util import lis_to_string
 
 
 class OrderRepo(DataRepo):
@@ -10,9 +9,9 @@ class OrderRepo(DataRepo):
         super().__init__(file)
 
     def convert_to_string(self, obj_list):
-        str_list = map(lambda
-                           item: f"{item.id},{item.customer_id},{lis_to_string(item.dish_ids)},{lis_to_string(item.drinks_ids)},{item.costs},{item.time_stamp}",
-                       obj_list)
+        str_list = \
+            map(lambda item: f"{item.id},{item.customer_id},{list_to_string(item.dish_ids)},"
+                             f"{list_to_string(item.drinks_ids)},{item.costs},{item.time_stamp}",obj_list)
         return reduce(lambda s1, s2: s1 + '\n' + s2, str_list)
 
     def convert_from_string(self, string):
@@ -32,3 +31,11 @@ class OrderRepo(DataRepo):
 
         lines = string.split('\n')
         return list(map(lambda line: line_to_dash(line), lines))
+
+
+def list_to_string(lst):
+    string = "["
+    for el in lst:
+        string += str(el) + ';'
+    string = string[:-1]
+    return string + ']'

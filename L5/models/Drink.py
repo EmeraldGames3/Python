@@ -7,4 +7,7 @@ class Drink(Dish):
         self.alcohol = alcohol
 
     def __eq__(self, other):
-        return super().__init__(other) and self.alcohol == other.alcohol
+        return super().__eq__(other) and self.alcohol == other.alcohol
+
+    def __str__(self):
+        return super().__str__() + f", alcohol Content:{self.alcohol}"

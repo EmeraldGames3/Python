@@ -10,6 +10,8 @@ repo.save([customer1, customer2])
 
 
 def search_customer_by_name_test():
+    print(repo.search("mih"))
+
     c1 = repo.search("mih")[0]
     c2 = repo.search("ion")[0]
 

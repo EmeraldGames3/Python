@@ -1,3 +1,3 @@
 class Identifiable:
-    def __init__(self, id):
-        self.id = id
+    def __init__(self, id_):
+        self.id = id_

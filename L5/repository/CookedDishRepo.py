@@ -9,7 +9,8 @@ class CookedDishRepo(DataRepo):
         super().__init__(file)
 
     def convert_to_string(self, dishes):
-        str_list = list(map(lambda item: f"{item.id},{item.name},{item.portion_size},{item.price},{item.prep_time}", dishes))
+        str_list = list(
+            map(lambda item: f"{item.id},{item.name},{item.portion_size},{item.price},{item.prep_time}", dishes))
         return reduce(lambda s1, s2: s1 + '\n' + s2, str_list)
 
     def convert_from_string(self, string: str):

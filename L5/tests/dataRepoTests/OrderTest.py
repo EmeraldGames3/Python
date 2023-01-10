@@ -20,6 +20,7 @@ drinks = drinks_repo.load()
 order = Order(0, customer.id, [dishes[0].id, dishes[1].id], [drinks[0].id])
 print(order)
 
+
 def order_bill_test():
     bill = order.generate_bill(dishes, drinks)
     print(f"Bill: \n{bill}")

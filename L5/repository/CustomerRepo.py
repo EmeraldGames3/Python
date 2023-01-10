@@ -8,9 +8,9 @@ class CustomerRepo(DataRepo):
     def __init__(self, file):
         super().__init__(file)
 
-    def convertToString(self, obj_list):
-        str_list = list(map(lambda item: f"{item.id},{item.name},{item.address}", obj_list))
-        return reduce(lambda s1, s2: s1 + '\n' + s2, str_list)
+    def convertToString(self, objList):
+        strList = list(map(lambda item: f"{item.id},{item.name},{item.address}", objList))
+        return reduce(lambda s1, s2: s1 + '\n' + s2, strList)
 
     def convertFromString(self, string):
 

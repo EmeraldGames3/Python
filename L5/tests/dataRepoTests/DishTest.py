@@ -4,11 +4,14 @@ from repository.CookedDishRepo import CookedDishRepo
 
 def add_dish_test():
     repo = CookedDishRepo("dishes.txt")
-    dish = CookedDish(0, "Pizza", 450, 12, 15)
-    repo.save([dish])
+    dish1 = CookedDish(0, "Pizza de cartofi", 450, 12, 15)
+    dish2 = CookedDish(0, "Pizza de telemea", 450, 12, 15)
+    repo.save([dish1])
 
-    read_dish = repo.load()[0]
-    assert dish == read_dish
+    readDish1 = repo.load()[0]
+    readDish2 = repo.load()[1]
+    assert dish1 == readDish1
+    assert dish2 == readDish2
 
 
 add_dish_test()

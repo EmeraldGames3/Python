@@ -1,2 +1,2 @@
-0,Pizza,450,12,15
-1,Ciorba de burta,350,24,45
+0,Pizza de cartofi,450,12,15
+1,Ciorba de telemea,350,24,45

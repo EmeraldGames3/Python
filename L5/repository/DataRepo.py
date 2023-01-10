@@ -3,9 +3,9 @@ class DataRepo:
         self.file = file
 
     def add(self, obj):
-        obj_list = self.load()
-        obj_list.append(obj)
-        self.save(obj_list)
+        objList = self.load()
+        objList.append(obj)
+        self.save(objList)
 
     def save(self, objList):
         self.writeToFile(self.convertToString(objList))

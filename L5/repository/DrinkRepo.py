@@ -8,7 +8,7 @@ class DrinkRepo(DataRepo):
         super().__init__(file)
 
     def convertToString(self, drinks):
-        strList = map(lambda item: f"{item.id_},{item.name},{item.portion_size},{item.price},{item.alcohol}", drinks)
+        strList = map(lambda item: f"{item.id_},{item.name},{item.portionSize},{item.price},{item.alcohol}", drinks)
         return reduce(lambda s1, s2: s1 + '\n' + s2, strList)
 
     def convertFromString(self, string):

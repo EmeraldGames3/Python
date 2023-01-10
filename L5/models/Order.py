@@ -24,16 +24,33 @@ class Order(Identifiable):
                f" Drinks Ids: {self.drinks_ids}, costs: {self.costs}, Order Time: {self.time_stamp}"
 
     def __get_items(self, dishes, drinks):
+        """
+        :param dishes: A list of all dishes in the menu
+        :param drinks: A list of all drinks in the menu
+        :return: A list build from the union of all drinks and dishes that appear in the menu, but also in this order
+        """
         dish_list = list(filter(lambda dish: dish.id in self.dish_ids, dishes))
         drink_list = list(filter(lambda drink: drink.id in self.drinks_ids, drinks))
         return dish_list + drink_list
 
     def generate_costs(self, dishes, drinks):
+        """
+        :param dishes: A list of all dishes in the menu
+        :param drinks: A list of all drinks in the menu
+        :return: The total cost of the ordered items
+        """
         items_list = self.__get_items(dishes, drinks)
         costs = functools.reduce(lambda s, item: s + item.price, items_list, 0)
         return costs
 
     def generate_bill(self, dishes, drinks):
+        """
+        Generates the bill using the dishes and drinks that the customer ordered
+        :param dishes: A list of all dished in the menu
+        :param drinks: A list of all drinks in the menu
+        :return: The bill of this order as a string with end-lines separating each item in the order
+        At the end of the order the total cost of the bill appears
+        """
         items_list = self.__get_items(dishes, drinks)
         self.costs = self.generate_costs(dishes, drinks)
         bill_lines = list(map(lambda item: f"'{item.name}' ... '{item.price}'", items_list))
@@ -42,9 +59,17 @@ class Order(Identifiable):
         return reduce(lambda s1, s2: s1 + '\n' + s2, bill_lines)
 
     def show_bill(self, dishes, drinks):
+        """
+        :param dishes: A list of all dishes in the menu
+        :param drinks: A list of all drinks in the menu
+        Prints the generated bill on the screen
+        """
         print(self.generate_bill(dishes, drinks))
 
     def __generate_estimated_time_for_preparation(self, dishes):
+        """"
+        Used for calculating the estimated wait Time
+        """
         dish_list = list(filter(lambda dish: dish.id in self.dish_ids, dishes))
         wait_time = sum(d.prep_time for d in dish_list)
         # print(wait_time)
@@ -52,6 +77,9 @@ class Order(Identifiable):
         return  [wait_time // 60, wait_time % 60]
 
     def __generate_estimated_time_for_finishing_the_order(self, dishes):
+        """"
+        Used for calculating the estimated wait Time
+        """
         time = self.time_stamp.split(":")
         preparation_time = self.__generate_estimated_time_for_preparation(dishes)
         finished_time = [int(time[0]) + preparation_time[0], int(time[1]) + preparation_time[1]]
@@ -59,6 +87,11 @@ class Order(Identifiable):
         return finished_time
 
     def generate_estimated_wait_time(self, dishes):
+        """
+        :param dishes: A list of all dishes in the menu
+        :return: The estimated time required for finishing the order as a string
+        The format is [hours : minutes]
+        """
         time = self.time_stamp.split(":")
         finished_time = self.__generate_estimated_time_for_finishing_the_order(dishes)
 

@@ -4,6 +4,10 @@ from repository.CustomerRepo import CustomerRepo
 from repository.DrinkRepo import DrinkRepo
 from ui.Menu import Menu
 
+"""
+In this folder we generate the menu and test if it was succesfull
+"""
+
 customer_repo = CustomerRepo("customers.txt")
 dish_repo = CookedDishRepo("dishes.txt")
 drinks_repo = DrinkRepo("drinks.txt")

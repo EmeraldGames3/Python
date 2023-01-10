@@ -6,6 +6,11 @@ from repository.CustomerRepo import CustomerRepo
 from repository.DrinkRepo import DrinkRepo
 from repository.OrderRepo import OrderRepo
 
+"""
+In this folder we test the functionalities of the Order class and the functionalities
+of the OrderRepo class
+"""
+
 customer_repo = CustomerRepo("customers.txt")
 dish_repo = CookedDishRepo("dishes.txt")
 drinks_repo = DrinkRepo("drinks.txt")

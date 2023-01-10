@@ -1,6 +1,11 @@
 from models.Customer import Customer
 from repository.CustomerRepo import CustomerRepo
 
+"""
+Here we test searching for a customer by name or address and changing the name of a customer
+Thus here we test the functionalities of the CustomerRepo class
+"""
+
 customer1 = Customer(0, "Mihai", "Str. Ciocarliei nr. 19")
 customer2 = Customer(1, "Gion", "Str. Luceafarului nr. 27")
 

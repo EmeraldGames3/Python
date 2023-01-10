@@ -1,7 +1,7 @@
 from functools import reduce
 
 
-class Menu:
+class RestaurantMenu:
     def __init__(self, dishes, drinks):
         self.drinks = drinks
         self.dishes = dishes
@@ -16,6 +16,7 @@ class Menu:
 
     def update_menu(self, dishes, drinks):
         """
+        This function is deprecated probably
         Used to update the menu when an item is added or deleted
         """
         self.dishes = dishes

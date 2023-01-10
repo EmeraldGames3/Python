@@ -38,6 +38,10 @@ class CustomerRepo(DataRepo):
         return list(map(lambda line: line_to_dash(line), lines))
 
     def search(self, name=None, address=None):
+        """
+        This function should only be used for testing purposes
+        It is deprecated
+        """
         customers = self.load()
         result = None
         if name is not None:
@@ -49,6 +53,10 @@ class CustomerRepo(DataRepo):
         return result
 
     def update(self, customer, name=None, address=None):
+        """
+        This function should only be used for testing purposes
+        It is deprecated
+        """
         customers = self.load()
         index = customers.index(customer)
         if name is not None:

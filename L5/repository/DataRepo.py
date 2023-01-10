@@ -4,6 +4,9 @@ class DataRepo:
 
     def add(self, obj):
         """
+        This function should only be used for testing purposes
+        It is deprecated
+
         :param obj: The objected to be added
 
         This function is used to append a new item to the specific database

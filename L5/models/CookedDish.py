@@ -2,7 +2,8 @@ from models.Dish import Dish
 
 
 class CookedDish(Dish):
-    def __init__(self, id_, name, portion_size, price, prep_time):
+    def __init__(self, id_: int = None, name: str = None, portion_size: int = None, price: int = None,
+                 prep_time: int = None):
         super().__init__(id_, name, portion_size, price)
         self.prep_time = prep_time
 

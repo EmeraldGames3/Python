@@ -3,7 +3,7 @@ from models.Identifiable import Identifiable
 
 class Customer(Identifiable):
 
-    def __init__(self, id_, name, address):
+    def __init__(self, id_: int = None, name: str = "Bob", address: str = "Strada Ciorilor numarul 420"):
         super().__init__(id_)
         self.name = name
         self.address = address

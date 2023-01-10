@@ -6,13 +6,13 @@ from models.Identifiable import Identifiable
 
 
 class Order(Identifiable):
-    def __init__(self, id_, customer_id, dish_ids=None, drinks_ids=None, costs=0, time_stamp="0"):
+    def __init__(self, id_=None, customer_id: int = None, dish_ids=None, drinks_ids=None, costs=None, time_stamp=None):
         super().__init__(id_)
         self.customer_id = customer_id
         self.dish_ids = dish_ids
         self.drinks_ids = drinks_ids
         self.costs = costs
-        self.time_stamp = time_stamp if time_stamp != "0" else f"{datetime.now().hour}:{datetime.now().minute}"
+        self.time_stamp = time_stamp if time_stamp is not None else f"{datetime.now().hour}:{datetime.now().minute}"
 
     def __eq__(self, other):
         return self.customer_id == other.customer_id \
@@ -74,7 +74,7 @@ class Order(Identifiable):
         wait_time = sum(d.prep_time for d in dish_list)
         # print(wait_time)
 
-        return  [wait_time // 60, wait_time % 60]
+        return [wait_time // 60, wait_time % 60]
 
     def __generate_estimated_time_for_finishing_the_order(self, dishes):
         """"

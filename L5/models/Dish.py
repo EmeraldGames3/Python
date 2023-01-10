@@ -3,7 +3,7 @@ from models.Identifiable import Identifiable
 
 class Dish(Identifiable):
 
-    def __init__(self, id_, name, portion_size, price):
+    def __init__(self, id_=None, name=None, portion_size=None, price=None):
         super().__init__(id_)
         self.name = name
         self.portion_size = portion_size

@@ -18,6 +18,7 @@ drinks = drinks_repo.load()
 
 menu = Menu(dishes, drinks)
 
+
 def test_generate_menu():
     print(menu)
 

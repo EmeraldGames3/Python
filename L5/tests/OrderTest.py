@@ -13,7 +13,7 @@ drinks_repo = DrinkRepo("drinks.txt")
 customer = Customer(0, "Mihai", "Str. Ciorilor")
 customer_repo.save([customer])
 
-dishes = [CookedDish(0, "Pizza", 450, 12, 15), CookedDish(1, "Ciorba de burta", 350, 24, 45)]
+dishes = [CookedDish(0, "Pizza", 450, 12, 25), CookedDish(1, "Ciorba de burta", 350, 24, 45)]
 dish_repo.save(dishes)
 drinks = drinks_repo.load()
 
@@ -37,5 +37,17 @@ def save_load_order_test():
     assert read_order == order
 
 
+def test_order_wait_time():
+    order_wait_time = order.generate_estimated_wait_time(dishes)
+    print(order_wait_time)
+
+    prep_t = dishes[0].prep_time + dishes[1].prep_time
+
+    prep_t = f"{prep_t // 60} : {prep_t % 60}"
+
+    assert order_wait_time == prep_t
+
+
 order_bill_test()
 save_load_order_test()
+test_order_wait_time()

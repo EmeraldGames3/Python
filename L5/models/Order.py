@@ -1,4 +1,5 @@
 import functools
+from datetime import datetime
 from functools import reduce
 
 from models.Identifiable import Identifiable
@@ -11,7 +12,7 @@ class Order(Identifiable):
         self.dish_ids = dish_ids
         self.drinks_ids = drinks_ids
         self.costs = costs
-        self.time_stamp = time_stamp
+        self.time_stamp = time_stamp if time_stamp != "0" else f"{datetime.now().hour}:{datetime.now().minute}"
 
     def __eq__(self, other):
         return self.customer_id == other.customer_id \
@@ -42,3 +43,23 @@ class Order(Identifiable):
 
     def show_bill(self, dishes, drinks):
         print(self.generate_bill(dishes, drinks))
+
+    def __generate_estimated_time_for_preparation(self, dishes):
+        dish_list = list(filter(lambda dish: dish.id in self.dish_ids, dishes))
+        wait_time = sum(d.prep_time for d in dish_list)
+        # print(wait_time)
+
+        return  [wait_time // 60, wait_time % 60]
+
+    def __generate_estimated_time_for_finishing_the_order(self, dishes):
+        time = self.time_stamp.split(":")
+        preparation_time = self.__generate_estimated_time_for_preparation(dishes)
+        finished_time = [int(time[0]) + preparation_time[0], int(time[1]) + preparation_time[1]]
+
+        return finished_time
+
+    def generate_estimated_wait_time(self, dishes):
+        time = self.time_stamp.split(":")
+        finished_time = self.__generate_estimated_time_for_finishing_the_order(dishes)
+
+        return f"{finished_time[0] - int(time[0])} : {finished_time[1] - int(time[1])}"

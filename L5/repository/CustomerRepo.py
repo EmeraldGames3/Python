@@ -9,15 +9,27 @@ class CustomerRepo(DataRepo):
         super().__init__(file)
 
     def convert_to_string(self, obj_list):
+        """
+        :param obj_list: A list of type Customer
+        :return: The list as a string
+        """
         str_list = list(map(lambda item: f"{item.id},{item.name},{item.address}", obj_list))
         return reduce(lambda s1, s2: s1 + '\n' + s2, str_list)
 
     def convert_from_string(self, string):
+        """
+        :param string: The representation of a list of customers as a string
+        :return: The string in the form of a list
+        """
 
         if string == "":
             return []
 
         def line_to_dash(line):
+            """
+            :param line: A line from the file
+            :return: A list of strings split after ','
+            """
             params = line.split(',')
             id_ = 0 if params[0] == '' else int(params[0])
             return Customer(id_, params[1], params[2])

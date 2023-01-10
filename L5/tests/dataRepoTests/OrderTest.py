@@ -1,7 +1,9 @@
 from models.CookedDish import CookedDish
 from models.Customer import Customer
+from models.Order import Order
 from repository.CookedDishRepo import CookedDishRepo
 from repository.CustomerRepo import CustomerRepo
+from repository.OrderRepo import OrderRepo
 
 customer_repo = CustomerRepo("customers.txt")
 dish_repo = CookedDishRepo("dishes.txt")

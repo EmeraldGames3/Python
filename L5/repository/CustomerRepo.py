@@ -29,10 +29,10 @@ class CustomerRepo(DataRepo):
         customers = self.load()
         result = None
         if name is not None:
-            result = list(filter(lambda cus: name.lower() in cus.name.lower(), customers))
+            result = list(filter(lambda customer: name.lower() in customer.name.lower(), customers))
 
         if address is not None:
-            result = list(filter(lambda cus: address.lower() in cus.address.lower(), customers))
+            result = list(filter(lambda customer: address.lower() in customer.address.lower(), customers))
 
         return result
 

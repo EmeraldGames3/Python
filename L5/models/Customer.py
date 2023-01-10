@@ -1,11 +1,15 @@
-from models.ID import ID
+from models.Identifiable import Identifiable
 
 
-class Customer(ID):
-    def __init__(self, id_: int, name: str = "Bob", address: str = "Sibiu strada Noua"):
+class Customer(Identifiable):
+
+    def __init__(self, id_, name, address):
         super().__init__(id_)
         self.name = name
         self.address = address
 
+    def __eq__(self, other):
+        return self.name == other.name and self.address == other.address
+
     def __str__(self):
-        return f"ID: {self.id}, Name: {self.name}, Addresse: {self.address}"
+        return f"Name: {self.name}, Address: {self.address}"

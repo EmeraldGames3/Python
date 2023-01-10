@@ -3,28 +3,29 @@ class DataRepo:
         self.file = file
 
     def add(self, obj):
-        objList = self.load()
-        objList.append(obj)
-        self.save(objList)
+        obj_list = self.load()
+        obj_list.append(obj)
+        self.save(obj_list)
 
-    def save(self, objList):
-        self.writeToFile(self.convertToString(objList))
+    def save(self, obj_list):
+        self.write_to_file(self.convert_to_string(obj_list))
 
     def load(self):
-        return self.convertFromString(self.readFile())
+        return self.convert_from_string(self.read_file())
 
-    def readFile(self):
+    def read_file(self):
         with open(self.file, 'r') as f:
             content = f.read()
             f.close()
         return content
 
-    def writeToFile(self, content):
+    def write_to_file(self, content):
         with open(self.file, 'w') as f:
             f.write(content)
+            f.close()
 
-    def convertToString(self, obj_list):
-        pass
+    def convert_to_string(self, obj_list):
+        return ""
 
-    def convertFromString(self, string):
-        pass
+    def convert_from_string(self, string):
+        return []

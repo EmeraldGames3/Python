@@ -15,7 +15,7 @@ def add_new_customer(customers: list[Customer], customer: Customer):
 
 def search_customer(customers: list[Customer]):
     """
-    This function searches for a specific in the list
+    This function searches for a specific customer in the list
     :param customers: A list of customer
     :return: A customer
     """
@@ -42,9 +42,8 @@ def search_customer(customers: list[Customer]):
     for i in range(len(tempCustomers)):
         print(f"Index: {i}, Customer: {tempCustomers[i]}")
 
-    option = int(input("Choose the index of the customer you want ").strip())
-
     try:
+        option = int(input("Choose the index of the customer you want ").strip())
         return tempCustomers[option]
     except IndexError:
         return None

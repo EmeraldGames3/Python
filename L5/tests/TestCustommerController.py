@@ -16,6 +16,7 @@ repo = CustomerRepo("customers.txt")
 
 repo.save([customer1, customer2])
 
+
 def test_add_customer():
     customers = repo.load()
     customers = add_new_customer(customers, customer3)
@@ -42,6 +43,7 @@ def test_search_customer():
 
     assert c2 == customer3
 
+
 def test_update_customer():
     customers = repo.load()
     c1 = search_customer_by_address(customers, "cioc")[0]
@@ -55,6 +57,7 @@ def test_update_customer():
     print(customers[0])
     print(customers[1])
     print(customers[2])
+
 
 def test_remove_customer():
     customers = repo.load()

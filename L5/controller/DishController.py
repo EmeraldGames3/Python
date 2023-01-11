@@ -1,5 +1,4 @@
 from models.CookedDish import CookedDish
-from models.Drink import Drink
 
 
 def add_new_dish(dishes: list[CookedDish], dish: CookedDish):
@@ -27,6 +26,9 @@ def update_dish(dishes: list[CookedDish]):
 
         option = int(input("Choose the index of the drink you want to update "))
 
+        if option not in range(len(dishes)):
+            return
+
         name = input("Enter a new name ").strip()
         portion_size = int(input("Enter a new portion size ").strip())
         price = int(input("Enter a new price ").strip())
@@ -36,9 +38,7 @@ def update_dish(dishes: list[CookedDish]):
 
         dishes[option] = new_dish
     except:
-        return None
-
-
+        return
 
 
 def remove_dish(dishes: list[CookedDish]):

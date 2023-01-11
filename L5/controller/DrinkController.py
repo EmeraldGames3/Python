@@ -26,6 +26,9 @@ def update_drink(drinks: list[Drink]):
 
         option = int(input("Choose the index of the drink you want to update "))
 
+        if option not in range(len(drinks)):
+            return
+
         name = input("Enter a new name ").strip()
         portion_size = int(input("Enter a new portion size ").strip())
         price = int(input("Enter a new price ").strip())
@@ -36,8 +39,6 @@ def update_drink(drinks: list[Drink]):
         drinks[option] = new_drink
     except:
         return None
-
-
 
 
 def remove_drink(drinks: list[Drink]):

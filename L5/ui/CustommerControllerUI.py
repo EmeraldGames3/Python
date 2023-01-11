@@ -7,6 +7,7 @@ def search_customer_prints():
     print("Enter 1 to search by address")
     print("Enter 2 to search by name")
 
+
 def add_new_customer_input():
     """
     :return: The input that the add_new_customer function needs

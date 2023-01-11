@@ -22,10 +22,11 @@ dishes = [CookedDish(0, "Pizza", 450, 12, 25), CookedDish(1, "Ciorba de burta", 
 dish_repo.save(dishes)
 drinks = drinks_repo.load()
 
-order = Order(0, customer.id, [dishes[0].id, dishes[1].id], [drinks[0].id])
+order = Order(0, customer.id, [dishes[0].id, dishes[1].id], [drinks[0].id], time_stamp="8:29")
 
 
-print(order)
+
+# print(order)
 
 
 def order_bill_test():
@@ -44,6 +45,19 @@ def save_load_order_test():
     assert read_order == order
 
 
+def save_order_test():
+    order_repo = OrderRepo("orders.txt")
+    order_repo.save([order])
+
+    contents = order_repo.read_file().strip()
+    # print(contents)
+    # print(order_repo.convert_to_string([order]))
+
+    s = "0,0,[0;1],[0],None,8:29"
+
+    assert contents == s
+
+
 def test_order_wait_time():
     order_wait_time = order.generate_estimated_wait_time(dishes)
     print(order_wait_time)
@@ -55,6 +69,7 @@ def test_order_wait_time():
     assert order_wait_time == prep_t
 
 
-order_bill_test()
-save_load_order_test()
-test_order_wait_time()
+# order_bill_test()
+# save_load_order_test()
+# test_order_wait_time()
+save_order_test()

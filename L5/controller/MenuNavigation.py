@@ -1,4 +1,6 @@
 from controller.CustomerController import add_new_customer, search_customer, update_customer, remove_customer
+from controller.DrinkController import remove_drink, update_drink, add_new_drink
+from models.Drink import Drink
 from repository.CookedDishRepo import CookedDishRepo
 from repository.CustomerRepo import CustomerRepo
 from repository.DrinkRepo import DrinkRepo
@@ -49,13 +51,27 @@ def main_menu(customerRepo: CustomerRepo, cookedDishRepo: CookedDishRepo, drinkR
             pass
 
         elif option == 6:
-            pass
+            print("Specify the details of the drink you want to add")
+            try:
+                """
+                I know this is stupid but i am tired
+                """
+                name = input("Enter a new name ").strip()
+                portion_size = int(input("Enter a new portion size ").strip())
+                price = int(input("Enter a new price ").strip())
+                alcohol = int(input("Enter a new alcohol content ").strip())
+
+                new_drink = Drink(name=name, portion_size=portion_size, price=price, alcohol=alcohol)
+            except:
+                return None
+
+            add_new_drink(drinks, new_drink)
 
         elif option == 7:
-            pass
+            update_drink(drinks)
 
         elif option == 8:
-            pass
+            remove_drink(drinks)
 
         elif option == 9:
             customer = add_new_customer_input()

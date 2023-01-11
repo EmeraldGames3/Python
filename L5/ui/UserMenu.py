@@ -2,6 +2,7 @@ def print_starting_menu():
     """
     Prints on the screen the starting menu
     """
+    print("\n")
     print("Choose an option")
     print("1 Show the menu")
     print("2. Register an order")

@@ -43,7 +43,10 @@ def add_order(orders: list[Order], dishes: list[Dish], drinks: list[Drink], cust
 
                 option = int(input("Choose the index of the drink you want to update "))
 
-                dish_IDs.append(drinks[option].id)
+                if option not in range(len(dishes)):
+                    continue
+
+                dish_IDs.append(dishes[option].id)
             except:
                 continue
         elif option == 2:
@@ -57,7 +60,10 @@ def add_order(orders: list[Order], dishes: list[Dish], drinks: list[Drink], cust
 
                 option = int(input("Choose the index of the drink you want to update "))
 
-                drink_IDs.append(dishes[option].id)
+                if option not in range(len(drinks)):
+                    continue
+
+                drink_IDs.append(drinks[option].id)
             except:
                 continue
 
@@ -72,6 +78,8 @@ def add_order(orders: list[Order], dishes: list[Dish], drinks: list[Drink], cust
             pass
 
     order = Order(customer_id=customer.id, drinks_ids=drink_IDs, dish_ids=dish_IDs)
+    orders.append(order)
+    print(order)
 
     order.show_bill(dishes, drinks)
     print(f"Estimated wait Time for the order {order.generate_estimated_wait_time(dishes)}")

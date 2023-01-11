@@ -25,12 +25,12 @@ drinks = drinks_repo.load()
 order = Order(0, customer.id, [dishes[0].id, dishes[1].id], [drinks[0].id])
 
 
-# print(order)
+print(order)
 
 
 def order_bill_test():
     bill = order.generate_bill(dishes, drinks)
-    # order.show_bill(dishes, drinks)
+    order.show_bill(dishes, drinks)
     assert "Pizza" in bill and "Ciorba de burta" in bill and "156" in bill and "Vodka" in bill
 
 
@@ -39,14 +39,14 @@ def save_load_order_test():
     order_repo.save([order])
 
     read_order = order_repo.load()[0]
-    # print(read_order)
+    print(read_order)
 
     assert read_order == order
 
 
 def test_order_wait_time():
     order_wait_time = order.generate_estimated_wait_time(dishes)
-    # print(order_wait_time)
+    print(order_wait_time)
 
     prep_t = dishes[0].prep_time + dishes[1].prep_time
 

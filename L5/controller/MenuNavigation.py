@@ -1,5 +1,8 @@
 from controller.CustomerController import add_new_customer, search_customer, update_customer, remove_customer
+from controller.DishController import remove_dish, update_dish, add_new_dish
 from controller.DrinkController import remove_drink, update_drink, add_new_drink
+from controller.OrderController import add_order
+from models.CookedDish import CookedDish
 from models.Drink import Drink
 from repository.CookedDishRepo import CookedDishRepo
 from repository.CustomerRepo import CustomerRepo
@@ -39,16 +42,31 @@ def main_menu(customerRepo: CustomerRepo, cookedDishRepo: CookedDishRepo, drinkR
             print(restaurant_menu)
 
         elif option == 2:
-            pass
+            add_order(orders, dishes, drinks, customers)
 
         elif option == 3:
-            pass
+            print("Specify the details of the dish you want to add")
+            try:
+                """
+                I know this is stupid but i am tired
+                """
+                name = input("Enter a new name ").strip()
+                portion_size = int(input("Enter a new portion size ").strip())
+                price = int(input("Enter a new price ").strip())
+                prep_time = int(input("Enter a new prep time ").strip())
+
+                new_dish = CookedDish(name=name, portion_size=portion_size, price=price, prep_time=prep_time)
+
+            except:
+                continue
+
+            add_new_dish(dishes, new_dish)
 
         elif option == 4:
-            pass
+            update_dish(dishes)
 
         elif option == 5:
-            pass
+            remove_dish(dishes)
 
         elif option == 6:
             print("Specify the details of the drink you want to add")
@@ -63,7 +81,7 @@ def main_menu(customerRepo: CustomerRepo, cookedDishRepo: CookedDishRepo, drinkR
 
                 new_drink = Drink(name=name, portion_size=portion_size, price=price, alcohol=alcohol)
             except:
-                return None
+                continue
 
             add_new_drink(drinks, new_drink)
 

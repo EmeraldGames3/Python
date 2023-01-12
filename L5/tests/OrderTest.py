@@ -60,7 +60,7 @@ def save_order_test():
 
 def test_order_wait_time():
     order_wait_time = order.generate_estimated_wait_time(dishes)
-    print(order_wait_time)
+    # print(order_wait_time)
 
     prep_t = dishes[0].prep_time + dishes[1].prep_time
 
@@ -69,7 +69,7 @@ def test_order_wait_time():
     assert order_wait_time == prep_t
 
 
-# order_bill_test()
-# save_load_order_test()
-# test_order_wait_time()
+order_bill_test()
+save_load_order_test()
+test_order_wait_time()
 save_order_test()

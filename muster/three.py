@@ -19,4 +19,4 @@ def cool_fibbonacci(n):
 
 one_line_fibbonacci = lambda n: n if n in [0, 1] else one_line_fibbonacci(n - 2) + one_line_fibbonacci(n - 1)
 
-print(one_line_fibbonacci(3))
+# print(one_line_fibbonacci(3))

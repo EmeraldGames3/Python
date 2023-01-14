@@ -11,7 +11,7 @@ def one(subject: str) -> float:
         subject_rows = filter(lambda row: row[2].lower() == subject.lower(), reader)
 
         # Using list comprehension to get grades from subject_rows
-        subject_grades = [float(row[-1]) for row in subject_rows if row[-1]]
+        subject_grades = [float(row[-1]) for row in subject_rows]
 
         # using statistics.mean function to get the mean of the grades
         return mean(subject_grades) if subject_grades else None

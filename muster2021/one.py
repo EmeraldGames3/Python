@@ -7,24 +7,29 @@ def read_file():
         return content
 
 
-def separate_words():
-    def read_file_old():
-        with(open("text.txt") as f):
-            return [line.strip() for line in f.read().split('\n')]
-
-    return " ".join([line for line in read_file_old()]).split(" ")
+# def separate_words():
+#     def read_file_old():
+#         with(open("text.txt") as f):
+#             return [line.strip() for line in f.read().split('\n')]
+#
+#     return " ".join([line for line in read_file_old()]).split(" ")
 
 
 def ub1(add_string: bool = True, add_number: bool = True):
     d = {}
 
     file_content = read_file()
-
-    if add_string:
-        d["strings"] = list(filter(lambda x: any(c.isdigit() for c in x), file_content))
+    # print(file_content)
 
     if add_number:
-        d["symbols"] = list(filter(lambda x: any(c in "!@#$%^.," for c in x), file_content))
+        d["numbers"] = list(filter(lambda x: all(map(lambda c: c.isdigit(), x.split())), file_content))
+
+    if add_string:
+        d["strings"] = list(
+            filter(
+                lambda x: not any(map(lambda c: c in "!@#$%^.,", x.split()))
+                          and not all(map(lambda c: c.isdigit(), x.split())),
+                file_content))
 
     print(d)
 
@@ -33,4 +38,4 @@ def ub1(add_string: bool = True, add_number: bool = True):
 
 ub1()
 
-print(read_file())
+# print(read_file())

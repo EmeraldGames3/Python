@@ -11,7 +11,7 @@ def read_file():
         return list(map(lambda x: x.split("   "), content))
 
 
-# print(read_file())
+print(read_file())
 
 
 def ub1(uppercase=False):
@@ -24,11 +24,17 @@ def ub1(uppercase=False):
         # Wir behalten die klein geschriebenen Nachnamen
         content = list(filter(lambda x: not (x[1][0].isupper()), content))
 
+    # print(content)
+
     # Wir behalten nur die Facher
     content = list(map(lambda x: x[-2], content))
 
+    # print(content)
+
     # Remove duplicates from content
     content = list(dict.fromkeys(content))
+
+    # print(content)
 
     # content = "|".join(content)
 
@@ -39,7 +45,7 @@ def ub1(uppercase=False):
 
 
 print(ub1(True))
-print(ub1())
+# print(ub1())
 
 
 def test_ub1():
@@ -54,4 +60,4 @@ def test_ub1():
         print("The function works as intended")
 
 
-test_ub1()
+# test_ub1()

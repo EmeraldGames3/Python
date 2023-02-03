@@ -1,0 +1,6 @@
+101 Bob 10
+104 Lob 5
+103 Dob 9
+109 Dobby 4
+1 Miclaus 3
+1 Mircea 3

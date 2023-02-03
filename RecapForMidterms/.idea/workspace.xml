@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="878e0aed-ebd3-42d3-bc44-2bced9a06062" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/V1/_.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../S1/Five.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../S1/Four.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../S1/one.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../S1/three.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../S1/two.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/V3/Ubung.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/V3/text.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/V4/Student.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/V5/Car.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/V5/Die.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../S3/exercises/exercise_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/../S3/exercises/exercise_1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +45,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Programming/Python/S3",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -53,6 +62,7 @@
       <option name="presentableId" value="Default" />
       <updated>1674892533084</updated>
       <workItem from="1674892537092" duration="2630000" />
+      <workItem from="1674898552981" duration="4876000" />
     </task>
     <servers />
   </component>
@@ -64,5 +74,9 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/RecapForMidterms$_.coverage" NAME="_ Coverage Results" MODIFIED="1674893270433" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/V1" />
+    <SUITE FILE_PATH="coverage/RecapForMidterms$Student.coverage" NAME="Student Coverage Results" MODIFIED="1674901316551" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/V4" />
+    <SUITE FILE_PATH="coverage/RecapForMidterms$Car.coverage" NAME="Car Coverage Results" MODIFIED="1674903436487" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/V5" />
+    <SUITE FILE_PATH="coverage/RecapForMidterms$Die.coverage" NAME="Die Coverage Results" MODIFIED="1674902371604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/V5" />
+    <SUITE FILE_PATH="coverage/RecapForMidterms$Ubung.coverage" NAME="Ubung Coverage Results" MODIFIED="1674900169066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/V3" />
   </component>
 </project>

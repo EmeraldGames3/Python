@@ -22,20 +22,16 @@ def ub1(add_string: bool = True, add_number: bool = True):
     # print(file_content)
 
     if add_number:
-        d["numbers"] = list(filter(lambda x: all(map(lambda c: c.isdigit(), x.split())), file_content))
-
+        d['numbers'] = list(filter(lambda x: x.isnumeric(), file_content))
     if add_string:
-        d["strings"] = list(
-            filter(
-                lambda x: not any(map(lambda c: c in "!@#$%^.,", x.split()))
-                          and not all(map(lambda c: c.isdigit(), x.split())),
-                file_content))
+        d['strings'] = list(filter(lambda x: all(c not in "!@#$%^.," and not c.isnumeric() for c in x), file_content))
 
-    print(d)
+    d['symbols'] = list(filter(lambda x: any(c in "!@#$%^.," for c in x), file_content))
+    return d
 
 
 # print(separate_words())
 
-ub1()
+print(ub1())
 
 # print(read_file())
